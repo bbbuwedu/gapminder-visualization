@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gapminder Interactive Chart</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h2>Health and Wealth of Nations Over Time</h2>
+    <div id="plotly-chart" style="width:100%;height:600px;"></div>
+
+    <script>
+        fetch('health_and_wealth_of_nations_over_time.json')
+            .then(response => response.json())
+            .then(data => {
+                Plotly.newPlot('plotly-chart', data.data, data.layout);
+            });
+    </script>
+</body>
+</html>
